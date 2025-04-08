@@ -12,44 +12,53 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: testdb
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
     steps:
-    # Checkout du code
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    # Installer Node.js
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'  # ou la version que tu utilises
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
 
-    # Installer les dépendances
-    - name: Install dependencies
-      run: |
-        cd backend
-        npm install
+      - name: Wait for MySQL to be ready
+        run: |
+          echo "Attente de la disponibilité de MySQL..."
+          sleep 20
 
-    # Donner les permissions d'exécution à Mocha
-    - name: Give execute permissions to Mocha
-      run: |
-        cd backend
-        chmod +x ./node_modules/.bin/mocha
+      - name: Install dependencies
+        run: |
+          cd backend
+          npm ci
 
-    # Lancer les tests
-    - name: Run tests
-      run: |
-        cd backend
-        npm test
+      - name: Run backend tests
+        run: |
+          cd backend
+          npm test
 
-    # Build Docker image
-    - name: Build Docker image
-       run: docker build -t ${{ secrets.DOCKER_USERNAME }}/fullstack-app:latest .
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/fullstack-app:latest .
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker push ${{ secrets.DOCKER_USERNAME }}/fullstack-app:latest
 
 
-    # Push Docker image
-    - name: Push Docker image to Docker Hub
-      run: |
-        echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-        docker push ${{ secrets.DOCKER_USERNAME }}/fullstack-app:latest
 
 
