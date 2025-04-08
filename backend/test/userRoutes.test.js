@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = require('../server');  // Assure-toi que le chemin du fichier `server.js` est correct
-const { expect } = require('chai');
+
 
 describe('Test de la route GET /', () => {
     it('devrait retourner une liste d\'utilisateurs avec le code 200', (done) => {
