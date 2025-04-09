@@ -49,7 +49,7 @@ Rôle :
 - Il utilise Supertest pour envoyer des requêtes HTTP à l'API et vérifier les réponses.
 
 ## Le Fichier Dockerfile
-Le fichier Dockerfile est utilisé pour dockeriser le projet dans Docker. Voici le contenu de ce fichier :
+- Le fichier Dockerfile est utilisé pour dockeriser le projet dans Docker. Voici le contenu de ce fichier :
 
 FROM node:18-alpine as builder
 
@@ -73,9 +73,7 @@ CMD ["node", "server.js"]
 
 ## Le Fichier .env
 
-Le fichier .env est utilisé pour déclarer les variables d'environnement pour la connexion avec la base de données. 
-
-Fichier : .env
+- Le fichier .env est utilisé pour déclarer les variables d'environnement pour la connexion avec la base de données. 
 
 MYSQL_HOST=root
 
@@ -85,7 +83,7 @@ MYSQL_PASSWORD=password
 
 MYSQL_DATABASE=mydatabase
 
-⚙️ En local (avant le build Docker et pour effectuer des tests locaux)
+- En local (avant le build Docker et pour effectuer des tests locaux)
 
 MYSQL_HOST=localhost
 
