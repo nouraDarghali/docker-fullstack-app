@@ -38,6 +38,12 @@ jobs:
     # Déboguer le nom d'utilisateur Docker
     - name: Debug Docker username
       run: echo ${{ secrets.DOCKER_USERNAME }}
+      
+    # Lancer les tests
+    - name: Run backend tests
+      run: |
+        cd backend
+        npm test
 
     # Build Docker image
     - name: Build Docker image
