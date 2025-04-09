@@ -34,8 +34,8 @@ Application fullstack avec **React.js (frontend)**, **Express.js (backend)**, **
 cd docker-fullstack-app
 docker-compose up --build
 
--Frontend : http://localhost:3000
--Backend API : http://localhost:5000
+- Frontend : http://localhost:3000
+- Backend API : http://localhost:5000
 
 ### 🐳 Tests
 cd backend
@@ -56,14 +56,14 @@ Build Docker image
 Push de l'image vers Docker Hub
 
 ### 🐳 🤖 📁 Fichier .env
--MYSQL_HOST=root
--MYSQL_USER=user
--MYSQL_PASSWORD=password
--MYSQL_DATABASE=mydatabase
+- MYSQL_HOST=root
+- MYSQL_USER=user
+- MYSQL_PASSWORD=password
+- MYSQL_DATABASE=mydatabase
 
 ⚙️ En local (avant le build Docker et pour effectuer des tests locaux)
 
--MYSQL_HOST=localhost
--MYSQL_USER=root
--MYSQL_PASSWORD=root
--MYSQL_DATABASE=mydatabase
+- MYSQL_HOST=localhost
+- MYSQL_USER=root
+- MYSQL_PASSWORD=root
+- MYSQL_DATABASE=mydatabase
