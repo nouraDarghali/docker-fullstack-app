@@ -31,8 +31,8 @@ Application fullstack avec **React.js (frontend)**, **Express.js (backend)**, **
 
 ### 🐳 Lancement avec Docker
 
-cd docker-fullstack-app
-docker-compose up --build
+- cd docker-fullstack-app
+- docker-compose up --build
 
 - Frontend : http://localhost:3000
 - Backend API : http://localhost:5000
@@ -45,15 +45,11 @@ npm test
 
 Un workflow  est défini dans .github/workflows/ci.yml avec les étapes suivants :
 
-Checkout du repo
-
-Setup de Node.js
-
-Installation des dépendances
-
-Build Docker image
-
-Push de l'image vers Docker Hub
+- Checkout du repo
+- Setup de Node.js
+- Installation des dépendances
+- Build Docker image
+- Push de l'image vers Docker Hub
 
 ### 🐳 🤖 📁 Fichier .env
 - MYSQL_HOST=root
