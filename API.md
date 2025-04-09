@@ -2,22 +2,22 @@
 ## 📚 Connexion à la base de données MySQL
 Fichier : db.js
 
-Ce fichier gère la connexion à la base de données MySQL.
+- Ce fichier gère la connexion à la base de données MySQL.
 
-Il utilise les variables d'environnement définies dans le fichier .env pour se connecter à la base de données.
+- Il utilise les variables d'environnement définies dans le fichier .env pour se connecter à la base de données.
 
-Ce fichier initialise la connexion et vérifie si la connexion est réussie ou non.
+- Ce fichier initialise la connexion et vérifie si la connexion est réussie ou non.
 
 ## 📚 Définition des Routes
 Fichier : server.js
 
-Ce fichier est responsable de la définition des routes de l'API.
+- Ce fichier est responsable de la définition des routes de l'API.
 
-Il inclut les routes pour récupérer, ajouter, mettre à jour et supprimer des utilisateurs.
+- Il inclut les routes pour récupérer, ajouter, mettre à jour et supprimer des utilisateurs.
 
-Ce fichier gère des erreurs.
+- Ce fichier gère des erreurs.
 
-Routes définies dans server.js :
+- Routes définies dans server.js :
 
 GET / : Récupère la liste des utilisateurs.
 
@@ -32,6 +32,7 @@ GET /api/test : Teste que l'API fonctionne correctement.
 ## Les Tests
 
 - Test unitaire pour une fonction mathématique
+  
 Fichier : test/unit.test.js
 
 Rôle :
@@ -44,8 +45,8 @@ Fichier : test/userRoutes.test.js
 
 Rôle :
 
-Ce fichier contient des tests d'intégration pour tester les routes de l'API telles que GET et POST.
-Il utilise Supertest pour envoyer des requêtes HTTP à l'API et vérifier les réponses.
+- Ce fichier contient des tests d'intégration pour tester les routes de l'API telles que GET et POST.
+- Il utilise Supertest pour envoyer des requêtes HTTP à l'API et vérifier les réponses.
 
 ## Le Fichier Dockerfile
 Le fichier Dockerfile est utilisé pour dockeriser le projet dans Docker. Voici le contenu de ce fichier :
@@ -71,6 +72,7 @@ EXPOSE 5000
 CMD ["node", "server.js"]
 
 ## Le Fichier .env
+
 Le fichier .env est utilisé pour déclarer les variables d'environnement pour la connexion avec la base de données. 
 
 Fichier : .env
