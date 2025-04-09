@@ -1,5 +1,5 @@
 const { add, subtract } = require('../math');  // Assure-toi que le chemin vers math.js est correct
-const { expect } = require('chai');
+
 
 describe('Tests des fonctions mathématiques', () => {
   
