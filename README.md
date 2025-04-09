@@ -1,6 +1,6 @@
 # 🚀 docker-fullstack-app
 
-Application fullstack avec **React.js (frontend)**, **Express.js (backend)**, **MySQL**, dockerisée avec **Docker Compose**, et intégrée avec **GitHub Actions** pour la CI/CD.
+ Application fullstack avec **React.js (frontend)**, **Express.js (backend)**, **MySQL**, dockerisée avec **Docker Compose**, et intégrée avec **GitHub Actions** pour la CI/CD.
 
 ## 🛠️ Fonctionnalités
 
@@ -38,8 +38,8 @@ Application fullstack avec **React.js (frontend)**, **Express.js (backend)**, **
 - Backend API : http://localhost:5000
 
 ### 🐳 Tests
-cd backend
-npm test
+- cd backend
+- npm test
 
 ### 🐳 🤖 CI/CD avec GitHub Actions
 
